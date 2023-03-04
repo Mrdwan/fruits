@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\FavoritedFruitsController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +15,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/favorites', [FavoritedFruitsController::class, 'index'])->name('favorites');
+Route::patch('/favorites/{id}', [FavoritedFruitsController::class, 'update'])->name('favorited.update');

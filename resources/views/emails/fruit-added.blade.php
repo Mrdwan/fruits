@@ -1,0 +1,1 @@
+a fruit ({{ $fruit->name }}) has been added to the system
